@@ -9,7 +9,7 @@
     </provider>
 
 		<!-- table entities here -->
-		<class>com.skilldistillery.eventtracker.entities.FIXME</class>
+		<class>com.skilldistillery.eventtracker.entities.Event</class>
 
 
 		<properties>
