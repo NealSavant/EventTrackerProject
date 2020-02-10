@@ -15,14 +15,14 @@
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/eventdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
-			<property name="javax.persistence.jdbc.user" value="FIXME" />
+			<property name="javax.persistence.jdbc.user" value="eventuser" />
 			<property name="javax.persistence.jdbc.password"
-				value="FIXME" />
+				value="eventuser" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
 
-			<property name="hibernate.show_sql" value="eventuser" />
-			<property name="hibernate.format_sql" value="eventuser" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
 
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQLDialect" />

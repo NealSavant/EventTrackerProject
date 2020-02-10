@@ -8,7 +8,7 @@ import com.skilldistillery.eventtracker.entities.Event;
 
 public interface EventRepository extends JpaRepository<Event, Integer>{
 
-	List<Event> findByDate(String date);
+	Event findByDate(String date);
 	Event findByNameLike(String name);
 	
 }

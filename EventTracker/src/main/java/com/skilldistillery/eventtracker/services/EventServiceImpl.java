@@ -16,7 +16,7 @@ public class EventServiceImpl implements EventService {
 	private EventRepository repo;
 
 	@Override
-	public List<Event> searchEventByDate(String date) {
+	public Event searchEventByDate(String date) {
 		return repo.findByDate(date);
 	}
 
@@ -44,15 +44,21 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
-	public Event update(Integer id) {
+	public Event update(Integer id, Event event) {
 		Optional<Event> opEvent = repo.findById(id);
 		if (opEvent.isPresent()) {
-			Event toUpdate = opEvent.get();
-
-			return repo.saveAndFlush(toUpdate);
+			Event toReplace = opEvent.get();
+			int newId = toReplace.getId();
+			event.setId(newId);
+			return repo.saveAndFlush(event);
 		}
 		System.err.println("***Did not update");
 		return null;
+	}
+
+	@Override
+	public List<Event> listEvents() {
+		return repo.findAll();
 	}
 
 }
