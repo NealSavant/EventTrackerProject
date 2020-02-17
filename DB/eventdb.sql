@@ -21,10 +21,10 @@ USE `eventdb` ;
 DROP TABLE IF EXISTS `event` ;
 
 CREATE TABLE IF NOT EXISTS `event` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `time_spent` DOUBLE NULL,
-  `date` VARCHAR(25) NULL,
+  `date` VARCHAR(50) NULL,
   PRIMARY KEY (`id`));
 
 SET SQL_MODE = '';
@@ -43,8 +43,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `eventdb`;
-INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (1, 'Thing', 5.3, '02-05-2020');
-INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (2, 'Thing', 1.2, '02-06-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (1, 'Gym', 45, '02-03-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (2, 'Gym', 50, '02-04-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (3, 'Gym', 35, '02-05-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (4, 'Gym', 73, '02-06-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (5, 'Gym', 60, '02-07-2020');
+INSERT INTO `event` (`id`, `name`, `time_spent`, `date`) VALUES (6, 'Gym', 30, '02-08-2020');
 
 COMMIT;
 

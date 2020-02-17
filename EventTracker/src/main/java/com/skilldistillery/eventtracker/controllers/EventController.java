@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.eventtracker.entities.Event;
@@ -37,9 +38,40 @@ public class EventController {
 		return svc.searchEventByName(name);
 	}
 
+//	@PostMapping("events")
+//	public Event create(@RequestBody Event event) {
+//		System.out.println("returned event" + event);
+//		return svc.create(event);
+//	}
+	
+	//recieveing from another controller
+//	@PostMapping("events")
+//	public void testEvent(@RequestParam String name) {
+//		System.out.println(name);
+//	}
+	
+	class shit{
+		public String name;
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public shit(String name) {
+			super();
+			this.name = name;
+		}
+		
+	}
 	@PostMapping("events")
-	public Event create(@RequestBody Event event) {
-		return svc.create(event);
+	public shit testEvent(@RequestBody String body) {
+		shit moreShit = new shit(body);
+		System.out.println(body);
+		return moreShit;
 	}
 
 	@DeleteMapping("events/{id}")
